@@ -32,7 +32,8 @@ Rutas y directorios:
 
 - ls => Lista los archivos y directorios en el directorio actual( ls NOMBRE_CARPETA)
 
-  - ls -l => para mostrar informacion detallada
+  - ls -l => para mostrar informacion detallada de archivos y directorios junto con sus permisos
+    ○ Ejemplo: ls -l archivo.txt muestra los permisos del archivo "archivo.txt".
   - ls -a => para mostrar archivos ocultos
   - ls -al => me alista todos los archivos hasta los ocultos, con ls solamente los publicos
   - ls img => listaria a todos los archivos y directorios llamdos img y ubicados en la ruta actual
@@ -152,6 +153,22 @@ Usuarios y permisos:
 - user = u
 - group = g
 - otros - others = o
+
+- chmod => Cambia los permisos.( chmod [PERMISOS] ARCHIVO )
+- chmod 777 archivo.txt => da permisos de lectura, escritura y ejecucion
+
+- 2 maneras de espesificar los perimisos:
+
+- Simbolica => Utiliza letras y simbolos.
+
+  - 1ro: Categoria del usuario(u, g or o)
+  - 2do: Operador de modificacion => + (agrega), - (elimina), = (establece perimisos explicitamente; lo que supone eliminar los que no se indiquen, si es que los tenia)
+  - 3ro: Permisos (r, w, x)
+    - ej:chmod u+x archivo => agrega peromisos de ejecucion al propietario del archivo
+    - ej: chmod u=rw, g=r, o= documento.txt => Se puede repetir categoria separandolas con coma.
+    - ej: chmod ug+rw documento.txt => si los permisos son comunes a varias categprias, estas e pueden agrupar
+
+- octal => Utiliza numeros octales de 3 digitos
 
 ---
 
