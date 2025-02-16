@@ -170,25 +170,35 @@ Usuarios y permisos:
 
 - octal => Utiliza numeros octales de 3 digitos
 
----
+  - 4 : permiso de lectura.
+  - 2 : permiso de escritura.
+  - 1 : permiso de ejecucion.
 
-- nano NOMBRE_DEL_ARCHIVO =>
+- para cada grupo de usuario(u, g, o) se suma un numero que es el permiso obtenido.
 
-pwd # => miro en el directorio donde me encuentro
-mkdir cursoLinux # => Creo la carpeta cursoLinux
+  - 0 : sin permisos. => ---
+  - 1 : permiso de ejecucion. => --x
+  - 2 : permiso de escritura. => -w-
+  - 4 : permiso de lectura. => -wx
+  - 5 : permiso de escritura y ejecucion. => r--
+  - 6 : permiso de lectura y escritura. => r-x
+  - 7 : permiso de lectura, escritura y ejecucion. => rwx
+  - ej: 755 => sig que el propietario (u) tiene todos los perimisos(4+2+1 = 7) mientras que el grupo(g) y otros(o) tienen solo de lectura y ejecucion(4+1 = 5)
 
-cd cursoLinux/ # => es para entrar al directorio
+- Ejemplo general => Ahora imaginemos que queremos otorgar al propietario (u) permisos de lectura y escritura (rw), a grupo (g) permisos de solo lectura (r) y quitar todos los permisos para otros usuarios (o). Podríamos hacerlo utilizando los siguientes argumentos:
+  - chmod u=rw,g=r,o= documento.txt
+  - chmod 644 documento.txt
 
-# cd .. => es para volver al directorio anterior
+Gestión de procesos:
 
-mkdir subCarpeta1
+- ps => muestra los procesos en ejecución.
 
-# cd subCarpeta1/
+  - ps aux => Muestra todos los procesos en formato extendido.
+  - ps -ef => muestra todos los procesos en formato estandar.
 
-# cd /home/cursoLinux/subCarpeta1 # => ir a la subCarpeta1 directamente
+- kill => mata un proceso
 
-# pwd
+  - kill [PID] => mata el proceso con el PID indicado.
 
-# touch listUsers.txt # => crear archivos
-
-# nano data.txt => edita archivos a trabes de la shell
+- top => muestra ua lista de procesos en ejecucion en tiempo real, ordenados por su uso de recursos.
+- pstree => muesta una representaciom jerarquica de los procesos en el sistema de arbol
