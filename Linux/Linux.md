@@ -154,3 +154,55 @@ Para cada grupo de usuario (`u`, `g`, `o`), se suma el valor de los permisos asi
 - `pstree` → Muestra procesos en forma de árbol.
 
 ---
+
+## Practica 1: Comandos del sistema operativo
+
+### Ayuda:
+
+- Ejercicio 1: Utiliza man para obtener información sobre el comando ls. → `man ls`
+- Ejercicio 2: Busca información sobre un comando relacionado con archivos utilizando apropos. → `apropos file`
+
+### Rutas y directorios:
+
+- Ejercicio 3: Utiliza pwd para mostrar la ruta absoluta del directorio actual. → `pwd`
+- Ejercicio 4: Crea un directorio llamado practica en el directorio actual usando mkdir. → `mkdir practica`
+
+### Gestión del software:
+
+- Ejercicio 5: Actualiza la lista de paquetes disponibles utilizando sudo apt update. → `sudo apt update`
+- Ejercicio 6: Instala el paquete "nano" utilizando sudo apt install nano. → `sudo apt install nano`
+
+### Gestión de hardware:
+
+- Ejercicio 7: Muestra información sobre la memoria libre en el sistema utilizando free. → `free` / `free -h` → mejor visualizacion
+- Ejercicio 8: Lista los dispositivos USB conectados utilizando lsusb. → `lsusb`
+
+### Acceso a información de archivos:
+
+- Ejercicio 9: Muestra el contenido del archivo texto.txt utilizando cat. Si no
+  existe, puedes crearlo con un editor de texto como nano haciendo nano
+  texto.txt (rellénalo con la información que quieras y guarda los cambios). → `cat texto.txt`
+- Ejercicio 10: Utiliza grep para buscar la palabra error en el archivo anterior.
+  Después utiliza el mismo comando para buscar una palabra que sepas que sí
+  contiene. → `grep error texto.txt`
+
+### Redirección y combinación de comandos:
+
+- Ejercicio 11: Redirige la salida del comando ls al archivo listaArchivos.txt
+  utilizando >. Comprueba que ha funcionado correctamente abriendo el archivo o
+  mostrando su contenido. → `ls > listaArchivos.txt`
+- Ejercicio 12: Utiliza pipes (|) y el comando wc para contar el número de líneas de
+  los archivos perros.txt y gatos.txt del directorio actual. Si los archivos no
+  existen, créalos y rellénalos con varias líneas de tu elección. → `cat perros.txt gatos.txt | wc -l` / en caso de no existir `nano documento.txt`
+
+### Usuarios y permisos:
+
+- Ejercicio 13: Cambia los permisos del archivo documento.txt para que el
+  propietario pueda leer y escribir utilizando chmod. Si no existe, puedes crearlo
+  con un editor de texto, o utilizar otro archivo que exista. → `chmod 600 documento.txt` o bien `chmod u+rw documento.txt` / en caso de no existir `nano documento.txt`
+- Ejercicio 14: Lista los permisos de todos los archivos en el directorio actual utilizando ls -l. → `ls -l`
+
+### Gestión de procesos:
+
+- Ejercicio 15: Muestra una lista de todos los procesos en ejecución utilizando ps. → `ps aux`
+- Ejercicio 16: Utiliza top para mostrar los procesos en ejecución y su uso de recursos.→ `top`
